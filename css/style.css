@@ -943,16 +943,20 @@ textarea {
     border-radius: 4px;
 }
 
-.input-email:placeholder-shown {
+.input-email:placeholder-shown,
+.input-email:invalid {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.input-email:not(placeholder-shown) {
+.input-email:not(:placeholder-shown) {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.03em;
 
     color: rgba(255, 255, 255, 0.6);
+}
+
+.input-email:not(:placeholder-shown):valid {
     border: 1px solid var(--logo-color);
 }
 
