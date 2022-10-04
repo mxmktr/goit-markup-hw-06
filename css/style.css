@@ -741,6 +741,8 @@ address a:focus {
     height: 18px;
 
     fill: var(--head-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .base-input {
@@ -753,17 +755,32 @@ address a:focus {
 
     color: var(--black-color);
     font-size: 16px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.base-input:hover,
-.base-input:focus {
+.modal-input-wrap:hover .base-input {
+    border-color: var(--logo-color);
     cursor: pointer;
 }
 
-.base-input:valid {
+.modal-input-wrap:hover .modal-input-icon {
+    fill: var(--logo-color);
+}
+
+.modal-form textarea:hover,
+.modal-form textarea:focus {
+    border-color: var(--logo-color);
+    cursor: pointer;
+}
+
+.base-input:focus,
+.modal-form textarea:focus,
+.base-input:valid:required {
     border-color: var(--logo-color);
 }
 
+.base-input:focus + .modal-input-icon,
 .base-input:valid + .modal-input-icon {
     fill: var(--logo-color);
 }
@@ -780,10 +797,8 @@ address a:focus {
 
     font-size: 16px;
     color: var(--black-color);
-}
 
-.modal-form textarea:hover {
-    cursor: pointer;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form textarea::placeholder {
